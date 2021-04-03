@@ -56,7 +56,7 @@ class Techno
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"read:techno","update:techno","create:techno","read:type","read:user","read:workout"})
      */
-    private $image;
+    private $image = 'noimage.png';
 
     /**
      * @ORM\Column(type="datetime")
@@ -78,6 +78,11 @@ class Techno
     {
         $this->workouts = new ArrayCollection();
         $this->createdAt = new \DateTime();
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 
     public function getId(): ?int
