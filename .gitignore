@@ -5,6 +5,7 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
+/public/pictures/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
@@ -14,3 +15,7 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+###> Docker ###
+/.docker/datas/*
+###< Docker ###

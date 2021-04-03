@@ -1,0 +1,109 @@
+App\Entity\User:
+  gaetan:
+      firstname: 'Gaëtan'
+      lastname: 'Jerphagnon'
+      email: 'jerphagnon.gaetan@gmail.com'
+      details: 'Développeur Back-end majoritairement autodidacte et en recherche de travail.'
+      roles: '[ROLE_USER,ROLE_ADMIN]'
+      password: '\$argon2id\$v=19\$m=65536,t=4,p=1\$LGX5A+WbhVJE6gpPrHB9KQ\$k7kG3SQEwQ3yArL/aT9WwDQjx7B2w/v+wjBKLhXVy7Q' #admin
+
+App\Entity\Techno:
+    techno_0:
+        name: 'VueJS'
+        image: 'vuejs.png'
+    
+    techno_1:
+        name: 'NuxtJS'
+        image: 'nuxtjs.png'
+
+    techno_2:
+        name: 'API Platform'
+        image: 'apiplatform.png'
+
+    techno_3:
+        name: 'GitHub Actions'
+        image: 'githubactions.png'
+
+    techno_4:
+        name: 'ElasticSearch'
+        image: 'elastic.png'
+
+    techno_5:
+        name: 'Kibana'
+        image: 'kibana.png'
+
+    techno_6:
+        name: 'Logstash'
+        image: 'logstash.png'
+
+    techno_7:
+        name: 'PHPUNIT'
+        image: 'phpunit.png'
+
+App\Entity\Workout:
+    workout_{1..15}:
+        techno: '@techno_*'
+        maker: '@gaetan'
+        name: 'Entrainement sur <word()>'
+        rating: '<numberBetween(0,5)>'
+        description: '<paragraph()>'
+        is_displayed: '<boolean(90)>'
+        done_at: '<dateTimeBetween("-1 days", "now")>'
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
+
+App\Entity\Type:
+    type_0:
+        workouts: ['@workout_*', '@workout_*']
+        name: 'Premier pas'
+        category: 0
+        description: 'Je découvre totalement cette technologie.'
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
+
+    type_1:
+        workouts: ['@workout_*', '@workout_*']
+        name: 'Prise en main'
+        category: 0
+        description: 'Je veux connaître un minimum cette technologie.'
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
+
+    type_2:
+        workouts: ['@workout_*', '@workout_*']
+        name: 'Entrainement'
+        category: 0
+        description: 'Je veux revoir certains points sur cette technologie.'
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
+
+    type_3:
+        workouts: ['@workout_*', '@workout_*']
+        name: 'Approfondissement'
+        category: 0
+        description: 'Je veux apprendre de nouvelles notions sur cette technologie.'
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
+
+    type_4:
+        workouts: ['@workout_*', '@workout_*']
+        name: 'Aprécié'
+        category: 2
+        description: "J'ai aprécié apprendre cette technologie."
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
+
+    type_5:
+        workouts: ['@workout_*', '@workout_*']
+        name: 'Adoré'
+        category: 1
+        description: "J'ai vraiment adoré apprendre cette technologie."
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
+
+    type_6:
+        workouts: ['@workout_*', '@workout_*']
+        name: 'Etourdi'
+        category: 4
+        description: "J'ai eu du mal à abordé cette technologie, et je l'admets."
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
+
+    type_7:
+        workouts: ['@workout_*', '@workout_*']
+        name: 'Compliqué'
+        category: 5
+        description: "Je n'pas compris cette technologie, et je l'admets."
+        updated_at: '<dateTimeBetween("-10 days", "now")>'
