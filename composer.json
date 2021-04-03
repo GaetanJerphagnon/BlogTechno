@@ -1,4 +1,6 @@
 {
+    "name": "blogtechno/blogtechno",
+    "description": "A simple site where I can put some posts",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
