@@ -40,7 +40,7 @@ class WorkoutCrudController extends AbstractCrudController
             AssociationField::new('maker', 'Maker'),
             AssociationField::new('techno', 'Techno'),
             AssociationField::new('types', 'Types'),
-            BooleanField::new('isDisplayed')->,
+            BooleanField::new('isDisplayed'),
             DateTimeField::new('createdAt')->setFormat('dd/MM/yyyy')->onlyOnDetail(),
             DateTimeField::new('updatedAt')->setFormat('dd/MM/yyyy')->onlyOnDetail(),
         ];
