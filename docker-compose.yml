@@ -24,7 +24,6 @@ services:
             PMA_HOST: db
         networks:
             - dev
-
     php:
         build: ./.docker/php
         container_name: www_docker_${PROJECT_NAME}
@@ -36,5 +35,9 @@ services:
         restart: always
         networks:
             - dev
+    mailer:
+        image: schickling/mailcatcher
+        ports: [1025, 1080]
+
 networks:
     dev:
